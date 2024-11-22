@@ -8,15 +8,24 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
+     * to see sql statement just run
+     * php artisan migrate --pretend
+     * it possibly wrong 😅 or i can't use it correctly
      */
     public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
+            $table->string('first_name');
+            $table->string('last_name');
+            $table->string('email')->unique()->nullable();
+            $table->string('phone_number',  10)->unique();
             $table->string('password');
+            $table->string('image', 300)->nullable();
+            $table->string('address')->nullable();
+            $table->string('role', 6)->default('client');
+
+            // $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
