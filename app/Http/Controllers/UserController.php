@@ -26,7 +26,7 @@ class UserController extends Controller
                 // 'unique:users', make sure to change +963 to 09 to check if unique or not
                 'min:3',
                 'max:20',
-                'regex:/^(?:\+963\d{9}|09\d{8})$/',
+                'regex:/^(?:\+9639\d{8}|09\d{8})$/',
             ],
             'email' => 'email|string|unique:users,email|min:6|max:50',
             'password' => 'required|confirmed|string|min:8|max:60',
@@ -68,7 +68,7 @@ class UserController extends Controller
                 'required',
                 'min:3',
                 'max:20',
-                'regex:/^(?:\+963\d{9}|09\d{8})$/',
+                'regex:/^(?:\+9639\d{8}|09\d{8})$/',
             ],
             'password' => 'required|string|min:8|max:60',
         ]);
