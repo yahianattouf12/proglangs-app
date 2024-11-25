@@ -68,7 +68,7 @@ class UserController extends Controller
                 'required',
                 'min:3',
                 'max:20',
-                'regex:/^(?:\+963\d{9}|09\d{8})$/',
+                'regex:/^(?:\+9639\d{8}|09\d{8})$/',
             ],
             'password' => 'required|string|min:8|max:60',
         ]);
