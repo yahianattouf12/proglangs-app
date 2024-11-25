@@ -15,6 +15,7 @@ class ProductController extends Controller
         //
     }
 
+
     /**
      * Show the form for creating a new resource.
      */
@@ -64,9 +65,9 @@ class ProductController extends Controller
     }
 
    
-    public function showShopProducts($id)
+    public function indexShopProducts($shop_id)
     {
-        $shop=Shop::findOrFail($id);
+        $shop=Shop::findOrFail($shop_id);
         $prodcuts=$shop->products;
 
         return response()->json(['products'=>$prodcuts],200);

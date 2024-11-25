@@ -17,7 +17,7 @@ Route::post('/user/register', [UserController::class, 'register'])->name('user.r
 
 Route::middleware('auth:sanctum')->post('/user/logout', [UserController::class, 'logout'])->name('user.logout');
 
-Route::post('user/{id}', [UserController::class, 'update'])->name('user.update')->name('user.update')->middleware('auth:sanctum'); 
+Route::post('user', [UserController::class, 'update'])->name('user.update')->name('user.update')->middleware('auth:sanctum'); 
 
 //Routes for shops
 Route::resource('shops', ShopController::class);
@@ -25,4 +25,4 @@ Route::resource('shops', ShopController::class);
 
 //Routes for products
 Route::resource('products', ProductController::class);
-Route::get('/products/showshopproducts/{id}', [ProductController::class,'showShopProducts'])->name('products.showShopProducts');
+Route::get('/products/shop/{shop_id}', [ProductController::class,'indexShopProducts'])->name('products.indexShopProducts');

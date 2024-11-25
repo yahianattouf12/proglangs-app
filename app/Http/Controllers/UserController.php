@@ -102,7 +102,7 @@ class UserController extends Controller
         $valid = Validator::make($req->all(), [
             'first_name' => 'string|min:2|max:50',
             'last_name' => 'string|min:2|max:50',
-            'email' => 'email|string|unique:users,email|min:6|max:50',
+           'email' => 'email|string|unique:users,email|min:6|max:50',
             'address' => 'string|min:2|max:50'
             //we have to add choice to change photo don't forget that
         ]);
